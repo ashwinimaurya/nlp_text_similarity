@@ -1,10 +1,7 @@
 # Generalized Edit Based Similairty (Distance) Functions for Comparing Strings
 
-### 
 
-I derived a generalized similarity function for various edit distance functions. This seems to be perform quite well.
-
-### Edit Distance 
+### What is Edit Distance between two strings?
 
 Edit distance between two string is typically defined as number of addition, deletion, insertion, transpose etc of characters. Some of the popular 
 edit distace functions are hamming distance, Levenshitein distance, Levenshtein Ratio, damerauLevenshtein, Jaro Winkler distance etc. 
