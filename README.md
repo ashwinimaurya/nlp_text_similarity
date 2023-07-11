@@ -1,6 +1,6 @@
-# Text Similarity Functions
+# Generalized Edit Based Similairty (Distance) Functions for Comparing Strings
 
-### Generalized Similarity Functions 
+### 
 
 I derived a generalized similarity function for various edit distance functions. This seems to be perform quite well.
 
