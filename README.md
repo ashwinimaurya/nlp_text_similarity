@@ -42,12 +42,30 @@ shows the generalzied distance metrics are generally better than original counte
 
         import rapidfuzz
         
-        s1="Mac and Cheese"
-        s2="Mak and Cheeze
-        
         print(rapidfuzz.distance.Hamming.distance(s1,s2))
         
+### 2. Levenshtein Distance: 
+      
+      The Levenshtein distance between two strings is defined is minumum number of (insertions, deletion, substitution) needed to convert one string to other. Here is Wiki page: https://en.wikipedia.org/wiki/Levenshtein_distance      
+
+      s1="Adam"
+      s2="Adm"
+
+      the Levenshtein distance would be 1.  Just insert 'a' in string s2 at position 2 makes both strings same.
+
+      If one of string is empty, the Levenshtein distance is length of non empty string.
+
+      #### How to get in Python packages:
         
+        Its available in many packages. One can use Levenshtein, rapidfuzz. 
+
+        Code:
+
+        import rapidfuzz
+        
+        print(rapidfuzz.distance.Levenshtein.distance(s1,s2))
+        
+                
       
 
       
