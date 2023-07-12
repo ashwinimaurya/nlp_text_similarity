@@ -1,4 +1,4 @@
-# Generalized Edit Based Similairty (Distance) Functions for Comparing Strings
+# Generalized Similairty (Distance) Functions for Comparing Strings
 
 
 ### What is Edit Distance between two strings?
