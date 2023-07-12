@@ -11,8 +11,8 @@ Below I dicusss a variations of these edit distance functions which I would call
 
 ## Generalzied Similarity (distance) Function
 
-      Intuition: 
-           Typically different parts of speech of same words differ at towards at end of the strin beginning. Also mispelled words often are mispelled at middle or end of string. Therefore given two strings, more they match from the begniing, more liley they are similar words than if they match from end. The generalized distance/similarity functions conputes the distance between each substring from left, and then mean of all these distances. One can also use different weights for substrings, but again if that would be useful for a particular uses cases. 
+Intuition: 
+     Typically different parts of speech of same words differ at towards at end of the strin beginning. Also mispelled words often are mispelled at middle or end of string. Therefore given two strings, more they match from the begniing, more liley they are similar words than if they match from end. The generalized distance/similarity functions conputes the distance between each substring from left, and then mean of all these distances. One can also use different weights for substrings, but again if that would be useful for a particular uses cases. 
 
       s1="dummy"
       s2="dummies"
@@ -30,9 +30,9 @@ Below I dicusss a variations of these edit distance functions which I would call
       0.5714285714285714
       0.8625850340136054
 
-      for similar meaning strings, generalzied similarity works quite well in this example.
+for similar meaning strings, generalzied similarity works quite well in this example.
 
-      Another example:
+Another example:
       
       s1='faithful'
       s2='fruitful'
@@ -47,4 +47,4 @@ Below I dicusss a variations of these edit distance functions which I would call
       0.625
       0.5224702380952382
 
-      for similar spelled words with different meaning, generalzied similarity works quite well in this example.
+for similar spelled words with different meaning, generalzied similarity works quite well in this example.
