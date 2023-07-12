@@ -1,6 +1,6 @@
 # Generalized Edit Distance (Similarrity)
 
-# What is Edit Distance between two strings?
+## What is Edit Distance (similarity) between two strings?
 Edit distance functions are used in many applications. For instance, in words completion, search engine (such as google) auto correction, mis-spelling detection etc are some uses cases we encounter almost every day.
 
 Edit distance between two string is typically defined as number of insertion, deletion, substitutions, transpose etc of characters. There are different variants of the algorithms such as hamming distance (number of character positions two strings different from each other), Levenshtein distance (accounts for minimum number of insertion, deletion, and substitutions), Damerau-Levenshtien (accounts for minimum number of insertion, deletion, substitutions, and transpose), Jaro-Winkler (not a metric, is an improvement of Jaro distance/similarity as it gives more weight to strings that have larger common prefixes, based on matching count: a matching is defined if a character that appears in both string is at most max(string_1, string_2)/2) distance away). Among these distance functions, Jaro Winkler works better than others but again this depends upon application.
