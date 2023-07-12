@@ -23,7 +23,7 @@ Intuition:
       print(rapidfuzz.distance.Hamming.normalized_similarity(s1,s2))   
       print(rapidfuzz.distance.Levenshtein.normalized_similarity(s1,s2))
       print(rapidfuzz.distance.DamerauLevenshtein.normalized_similarity(s1,s2))
-      print(get_generalized_fuzz_dl_norm_simi(s1, s2))
+      print(get_generalized_DamerauLevenshtein_similarity(s1, s2))
 
       0.5714285714285714
       0.5714285714285714
@@ -40,7 +40,7 @@ Another example:
       print(rapidfuzz.distance.Hamming.normalized_similarity(s1,s2))
       print(rapidfuzz.distance.Levenshtein.normalized_similarity(s1,s2))
       print(rapidfuzz.distance.DamerauLevenshtein.normalized_similarity(s1,s2))
-      print(get_generalized_fuzz_dl_norm_simi(s1, s2))
+      print(get_generalized_DamerauLevenshtein_similarity(s1, s2))
       
       0.5
       0.625
@@ -48,3 +48,27 @@ Another example:
       0.5224702380952382
 
 for similar spelled words with different meaning, generalzied similarity works quite well in this example.
+
+Here is Python implementation:
+
+     def get_generalized_DamerauLevenshtein_similarity(s1,s2):
+         from itertools import zip_longest
+         import numpy as np
+         if s1=='' or s2=='':
+             return 0
+         
+         s1=s1.lower()
+         s2=s2.lower()
+         t1=''
+         t2=''
+         
+         simi=0; cnt=0
+         for a,b in zip_longest(s1,s2):
+             if a:
+                 t1=t1+a
+             if b:
+                 t2=t2+b
+             cnt+=1
+             simi+=rapidfuzz.distance.DamerauLevenshtein.normalized_similarity(t1,t2)
+             
+         return simi/cnt
