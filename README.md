@@ -49,7 +49,7 @@ Another example:
 
 for similar spelled words with different meaning, generalzied similarity works quite well in this example.
 
-Here is Python implementation:
+## Here is Python implementation:
 
      def get_generalized_DamerauLevenshtein_similarity(s1,s2):
          from itertools import zip_longest
