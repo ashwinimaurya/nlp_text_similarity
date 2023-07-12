@@ -52,8 +52,11 @@ for similar spelled words with different meaning, generalzied similarity works q
 ## Here is Python implementation:
 
      def get_generalized_DamerauLevenshtein_similarity(s1,s2):
+         """
+         Compute the generalized similarity betwee two strings
+         """
+         
          from itertools import zip_longest
-         import numpy as np
          if s1=='' or s2=='':
              return 0
          
