@@ -41,7 +41,7 @@ Intuition:
              
          return simi/cnt
 
-### Examples       
+### Example 1:      
 
       s1="dummy"
       s2="dummies"
@@ -61,7 +61,7 @@ Intuition:
 
 for similar meaning strings, generalzied similarity works quite well in this example.
 
-### Another example
+### Example 2:
       
       s1='faithful'
       s2='fruitful'
