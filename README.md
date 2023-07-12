@@ -1,14 +1,16 @@
-What is Edit Distance between two strings?
+# Generalized Edit Distance (Similarrity)
+
+# What is Edit Distance between two strings?
 Edit distance functions are used in many applications. For instance, in words completion, search engine (such as google) auto correction, mis-spelling detection etc are some uses cases we encounter almost every day.
 
 Edit distance between two string is typically defined as number of insertion, deletion, substitutions, transpose etc of characters. There are different variants of the algorithms such as hamming distance (number of character positions two strings different from each other), Levenshtein distance (accounts for minimum number of insertion, deletion, and substitutions), Damerau-Levenshtien (accounts for minimum number of insertion, deletion, substitutions, and transpose), Jaro-Winkler (not a metric, is an improvement of Jaro distance/similarity as it gives more weight to strings that have larger common prefixes, based on matching count: a matching is defined if a character that appears in both string is at most max(string_1, string_2)/2) distance away). Among these distance functions, Jaro Winkler works better than others but again this depends upon application.
 
 Below I discuss a variations of these edit distance functions which I would call as generalized distance (similarity) functions. Analysis on some most popular homonyms (similar spelled but different in meaning) shows the generalized distance metrics are generally better than original counterparts. For misspelled or similar words, the existing distance functions can be preferred than their generalized counterparts,
 
-Generalized Similarity (distance) Function
+## Generalized Similarity (distance) Function
 Intuition: Typically different parts of speech of same words differ at towards at end of the string beginning. Also misspelled words often are misspelled at middle or end of string. Therefore given two strings, more they match from the beginning, more likely they are similar words than if they match from end. The generalized distance/similarity functions computes the distance between each substring from left, and then mean of all these distances. One can also use different weights for substrings, but again if that would be useful for a particular uses cases.
 
-Here is Python implementation:
+## Here is Python implementation:
 
      def get_generalized_DamerauLevenshtein_similarity(s1,s2):
           """
