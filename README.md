@@ -14,41 +14,6 @@ Below I dicusss a variations of these edit distance functions which I would call
 Intuition: 
      Typically different parts of speech of same words differ at towards at end of the strin beginning. Also mispelled words often are mispelled at middle or end of string. Therefore given two strings, more they match from the begniing, more liley they are similar words than if they match from end. The generalized distance/similarity functions conputes the distance between each substring from left, and then mean of all these distances. One can also use different weights for substrings, but again if that would be useful for a particular uses cases. 
 
-      s1="dummy"
-      s2="dummies"
-
-      s1='dummy'
-      s2='dummies'
-      
-      print(rapidfuzz.distance.Hamming.normalized_similarity(s1,s2))   
-      print(rapidfuzz.distance.Levenshtein.normalized_similarity(s1,s2))
-      print(rapidfuzz.distance.DamerauLevenshtein.normalized_similarity(s1,s2))
-      print(get_generalized_DamerauLevenshtein_similarity(s1, s2))
-
-      0.5714285714285714
-      0.5714285714285714
-      0.5714285714285714
-      0.8625850340136054
-
-for similar meaning strings, generalzied similarity works quite well in this example.
-
-Another example:
-      
-      s1='faithful'
-      s2='fruitful'
-      
-      print(rapidfuzz.distance.Hamming.normalized_similarity(s1,s2))
-      print(rapidfuzz.distance.Levenshtein.normalized_similarity(s1,s2))
-      print(rapidfuzz.distance.DamerauLevenshtein.normalized_similarity(s1,s2))
-      print(get_generalized_DamerauLevenshtein_similarity(s1, s2))
-      
-      0.5
-      0.625
-      0.625
-      0.5224702380952382
-
-for similar spelled words with different meaning, generalzied similarity works quite well in this example.
-
 ## Here is Python implementation:
 
      def get_generalized_DamerauLevenshtein_similarity(s1,s2):
@@ -75,3 +40,42 @@ for similar spelled words with different meaning, generalzied similarity works q
              simi+=rapidfuzz.distance.DamerauLevenshtein.normalized_similarity(t1,t2)
              
          return simi/cnt
+
+### Examples       
+
+      s1="dummy"
+      s2="dummies"
+
+      s1='dummy'
+      s2='dummies'
+      
+      print(rapidfuzz.distance.Hamming.normalized_similarity(s1,s2))   
+      print(rapidfuzz.distance.Levenshtein.normalized_similarity(s1,s2))
+      print(rapidfuzz.distance.DamerauLevenshtein.normalized_similarity(s1,s2))
+      print(get_generalized_DamerauLevenshtein_similarity(s1, s2))
+
+      0.5714285714285714
+      0.5714285714285714
+      0.5714285714285714
+      0.8625850340136054
+
+for similar meaning strings, generalzied similarity works quite well in this example.
+
+### Another example
+      
+      s1='faithful'
+      s2='fruitful'
+      
+      print(rapidfuzz.distance.Hamming.normalized_similarity(s1,s2))
+      print(rapidfuzz.distance.Levenshtein.normalized_similarity(s1,s2))
+      print(rapidfuzz.distance.DamerauLevenshtein.normalized_similarity(s1,s2))
+      print(get_generalized_DamerauLevenshtein_similarity(s1, s2))
+      
+      0.5
+      0.625
+      0.625
+      0.5224702380952382
+
+for similar spelled words with different meaning, generalzied similarity works quite well in this example.
+
+
