@@ -9,7 +9,7 @@ Edit distance between two string is typically defined as number of insertion, de
 
 Below I dicusss a variations of these edit distance functions which I would call as generalzied distance (similarity) fuctions. Analysis on some most popular homonyms (similar spelled but different in meaning) shows the generalzied distance metrics are generally better than original counterparts. For mispelled or similar words, the existing distance functions can be preferred than their generalzied counterparts,
 
-Generalzied Edit Distance Functions:
+## Generalzied Edit Distance Functions:
 
       Intuition: 
            Typically different parts of speech of same words differ at towards at end of the strin beginning. Also mispelled words often are mispelled at middle or end of string. Therefore given two strings, more they match from the begniing, more liley they are similar words than if they match from end. The generalized distance/similarity functions conputes the distance between each substring from left, and then mean of all these distances. One can also use different weights for substrings, but again if that would be useful for a particular uses cases. 
