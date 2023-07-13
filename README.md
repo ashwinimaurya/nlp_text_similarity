@@ -1,4 +1,4 @@
-# Generalized Edit Distance (Similarrity)
+# Generalized Edit Distance (Similarity)
 
 ## What is Edit Distance (similarity) between two strings?
 Edit distance functions are used in many applications. For instance, in words completion, search engine (such as google) auto correction, mis-spelling detection etc are some uses cases we encounter almost every day.
